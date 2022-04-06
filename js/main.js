@@ -47,11 +47,9 @@ instaStory =[
             li.innerHTML =`
             <div class="insta__img-box"> 
             <img id="insta__img" src="${item.imgUrl}" alt="img">
-               <button class="slide__btn">
-                <i class='bx bxl-instagram' ></i>
-            </button>
+    
             <div >
-              <div class="insta__main-box d-none">
+              <div class="insta__main-box ">
               <div style="position: absolute; top: 20px; left: 10px">
               </div>
                 <div class="insta__btn-box" style="display: flex;">
@@ -71,7 +69,7 @@ instaStory =[
                 <span class="child2"></span>
                 <span class="child3"></span>
           </div>
-          <div class=" input__box d-none">
+          <div class=" input__box ">
                 <input class="input__psce" type="text" placeholder="Reply to you ${item.name}">
                 <button class="input__btn">
                   <i class='bx bxl-telegram'></i>
@@ -87,11 +85,9 @@ instaStory =[
             li.innerHTML =`
             <div class="insta__img-box"> 
             <video src="${item.imgUrl[0]}" controls="autoplay" id="video"></video>
-               <button class="slide__btn ">
-                <i class='bx bxl-instagram' ></i>
-            </button>
+    
             <div >
-              <div class="insta__main-box d-none">
+              <div class="insta__main-box ">
               <div style="position: absolute; top: 20px; left: 10px">
               </div>
                 <div class="insta__btn-box" style="display: flex;">
@@ -111,7 +107,7 @@ instaStory =[
                 <span class="child2"></span>
                 <span class="child3"></span>
           </div>
-          <div class=" input__box d-none">
+          <div class=" input__box ">
                 <input class="input__psce" type="text" placeholder="Reply to you ${item.name}">
                 <button class="input__btn">
                   <i class='bx bxl-telegram'></i>
