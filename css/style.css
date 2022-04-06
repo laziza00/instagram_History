@@ -14,15 +14,15 @@ body {
 }
 .container {
   padding: 40px 0;
-  width: 100%;
-  max-width: 1100px;
+  width: 100vw;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 .insta__box {
-  width: 100%;
+  width: 100vw;
   padding: 100px 0;
   margin:  0 auto;
   position: relative;
@@ -38,7 +38,7 @@ body {
   overflow: hidden;
   margin: 0 30px !important;
   margin: 0 auto;
-  width: 350px;
+  width: 250px;
   height: 350px;
   transition: all 0.3s ease;
 }
@@ -50,7 +50,7 @@ body {
 }
 .insta__img-box img{
   width: 100%;
-  height: 350px;
+  height: 350px !important;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -61,10 +61,6 @@ body {
   border-radius: 10px !important;
 }
 .slide_btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 50%;
   width: 75px;
   padding: 2px 2px;
@@ -72,41 +68,61 @@ body {
   background-color: transparent;
   border: 1px solid rgb(177, 64, 30);
 }
-.slide_btn i {
-  border-radius: 50%;
-  width: 70px;
-  font-size: 60px;
-  color: rgb(235, 141, 88);
-  background-color: #f1e3c7;
-  height: 70px;
+
+
+.active {
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 
 .right {
   position: fixed;
-  top: 50%;
-  right: 40%;
+  bottom: 40px;
+  right: 47%;
   z-index: 10;
 }
 .left {
   position: fixed;
-  top: 50%;
-  left: 40%;
+  bottom: 40px;
+  left: 47%;
   z-index: 10;
 }
 .btn {
-  background-color: rgb(252, 205, 205);
   color: black;
   border-radius: 10px;
   border: none;
   width: 40px;
   height: 40px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.363);
 }
 
+.insta__btn-box {
+  position: absolute;
+  top: 27px;
+  right: 10px;
+}
+.insta__head-btn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.insta__head-btn i{
+  color: #fff;
+  font-size: 25px;
+} 
+.insta__main-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .input__box {
   position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: transparent;
+  bottom: 10px;
+  left: 5px;
+  width: 150px;
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid transparent;
@@ -122,22 +138,43 @@ body {
   border: 1px solid #fff;
   color: rgb(133, 131, 131);
   outline: none;
+  width: 190px;
+  margin: 0 7px 0 0;
 }
 .input__psce::placeholder{
   color: rgb(214, 206, 206);
 }
 .input__btn {
   border: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #fff;
   background-color: transparent;
 }
+.slide__btn {
+  background-color: rgba(0, 0, 0, 0.637);
+  border: 1px solid rgb(243, 183, 183);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 7px 6px;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  border-radius: 50%;
 
+}
+.insta__head-img {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+}
 .box {
   position: absolute;
   top: 10px;
   left: 0;
-  width: 160px;
+  width: 100%;
   height: 4px;
   background-color: transparent;
   display: flex;
@@ -145,56 +182,202 @@ body {
   align-items: center;
   z-index: 50;
 }
-.box span {
-  height: 3px;
-  margin: 0 4px;
-  transition: all 10s liner;
-  background-color: #ccc;
-  border-radius: 20px;
+.insta__logo {
+  width: 103px;
+  height: 39px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
 }
-.child1 {
-  width: 0;
-  animation: spanAnim 10s  linear 1;
+.removebtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  color: #f1e3c7;
+  font-size: 45px;
 }
-.child2 {
-  width: 0;
-  animation: spanAnim2 20s linear 1;
+.d-none {
+  display: none;
 }
+.d-block {
+  display: block;
+}
+
+
+
+
+.child1,
+.child2,
 .child3 {
-  width: 0;
-  animation: spanAnim3 30s linear 1;
+  position: relative;
+  width: 32%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #ffffff79;
+}
+.child1::before,
+.child2::before,
+.child3::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  animation: child1 5s linear both;
 }
 
-
-@keyframes spanAnim {
-  0%{
-    width: 0;
-  }
-  100%{
-    width: 50px;
-  }
-}
-@keyframes spanAnim2 {
-  0%{
-    width: 0;
-  }
-  45% {
-    width: 0;
-  }
-  100%{
-    width: 50px;
-  }
+.child2::before {
+  animation: child2 5s linear 5s both;
 }
 
-@keyframes spanAnim3 {
-  0%{
-    width: 0;
+.child3::before {
+  animation: child3 5s linear 10s both;
+}
+
+@keyframes child1 {
+  0% {
+    width: 0%;
+    background-color: #fff;
   }
-  65% {
-      width: 0;
+  10% {
+    width: 10%;
+    background-color: #fff;
   }
-  100%{
-    width: 50px;
+  20% {
+    width: 20%;
+    background-color: #fff;
+  }
+  30% {
+    width: 30%;
+    background-color: #fff;
+  }
+  40% {
+    width: 40%;
+    background-color: #fff;
+  }
+  50% {
+    width: 50%;
+    background-color: #fff;
+  }
+  60% {
+    width: 60%;
+    background-color: #fff;
+  }
+  70% {
+    width: 70%;
+    background-color: #fff;
+  }
+  80% {
+    width: 80%;
+    background-color: #fff;
+  }
+  90% {
+    width: 90%;
+    background-color: #fff;
+  }
+  100% {
+    width: 100%;
+    background-color: #fff;
   }
 }
 
+@keyframes child2 {
+  0% {
+    width: 0%;
+    background-color: #fff;
+  }
+
+  10% {
+    width: 10%;
+    background-color: #fff;
+  }
+
+  20% {
+    width: 20%;
+    background-color: #fff;
+  }
+  30% {
+    width: 30%;
+    background-color: #fff;
+  }
+  40% {
+    width: 40%;
+    background-color: #fff;
+  }
+  50% {
+    width: 50%;
+    background-color: #fff;
+  }
+  60% {
+    width: 60%;
+    background-color: #fff;
+  }
+  70% {
+    width: 70%;
+    background-color: #fff;
+  }
+  80% {
+    width: 80%;
+    background-color: #fff;
+  }
+  90% {
+    width: 90%;
+    background-color: #fff;
+  }
+  100% {
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+@keyframes child3 {
+  0% {
+    width: 0%;
+    background-color: #fff;
+  }
+
+  10% {
+    width: 10%;
+    background-color: #fff;
+  }
+
+  20% {
+    width: 20%;
+    background-color: #fff;
+  }
+  30% {
+    width: 30%;
+    background-color: #fff;
+  }
+  40% {
+    width: 40%;
+    background-color: #fff;
+  }
+  50% {
+    width: 50%;
+    background-color: #fff;
+  }
+  60% {
+    width: 60%;
+    background-color: #fff;
+  }
+  70% {
+    width: 70%;
+    background-color: #fff;
+  }
+  80% {
+    width: 80%;
+    background-color: #fff;
+  }
+  90% {
+    width: 90%;
+    background-color: #fff;
+  }
+  100% {
+    width: 100%;
+    background-color: #fff;
+  }
+}
